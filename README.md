@@ -1,2 +1,2 @@
-# marcuspostell
+# Appliances World 
 Appliance World (AW) is an e-Commerce retailed business which sell appliances. For this particular project, we will assume that AW sells only washers and dryers of various brands and type.  I was responsible for working on the back end development of the Appliances World project. I maintained a database in MongoDB of over 100 washer and dryers. We used a Database management form. This allow the system admin to add, modify or delete products in the database. This form was implemented so that unauthorized users will not have direct access to the database.
