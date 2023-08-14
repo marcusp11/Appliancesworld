@@ -1,0 +1,312 @@
+<html>
+
+<head>
+  <title>Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script>
+    "use strict";
+    $(document).ready(function () {
+
+      $("#add").click(function (e) {
+        e.preventDefault();
+        addProduct();
+      })
+
+      $("#delete").click(function (e) {
+        e.preventDefault();
+        deleteProduct();
+      })
+    });
+
+    function addProduct(e) {
+
+      var data =
+      {
+        Id: $("input[name=ID]").val().trim(),
+        ItemType: $("select[name=ItemType]").val(),//.trim()
+        Name: $("input[name=Name]").val().trim(),
+        Category: $("select[name=Category]").val(),//.trim(),
+        Description: $("input[name=Description]").val().trim(),
+        Price: $("input[name=Price]").val().trim(),
+        Capacity: $("input[name=Capacity]").val().trim(),
+        Stackable: $("select[name=Stackable]").val(),//.trim(),
+        SteamFunction: $("select[name=SteamFunction]").val(),//.trim(),
+        Width: $("input[name=Width]").val().trim(),
+        Depth: $("input[name=Depth]").val().trim(),
+        Quantity: $("select[name=Quantity]").val(),//.trim(),
+        Brand: $("select[name=Brand]").val(),//.trim(),
+
+
+      }
+      //clear the input areas
+      $('#id').val("");
+      $('#itemType').val("");
+      $('#Name').val("");
+      $('#Category').val("");
+      $('#Description').val("");
+      $('#Price').val("");
+      $('#Capacity').val("");
+      $('#Stackable').val("");
+      $('#Stackable').val("");
+      $('#SteamFunction').val("");
+      $('#Width').val("");
+      $('#Depth').val("");
+      $('#Quantity').val("");
+      $('#Brand').val("");
+
+      // show the subject and body assigned to data
+      console.log(data);
+
+      // post "/signup" route in server using the data captured fromm the input
+      $.post('/addForm', data, function (result) {
+        if (result) {
+
+          alert("Information has been added to the database.")
+        }
+        else {
+          alert("an error has occured");
+        }
+      });
+
+    }
+
+    function deleteProduct(e) {
+
+      var data =
+      {
+        DeleteName: $("#DeleteName").val()
+      }
+      //clear the input areas
+      $('#DeleteName').val("");
+
+
+      // show the subject and body assigned to data
+      console.log(data);
+
+      $.post('/formpage/delete', data, function (result) {
+        if (result) {
+
+          alert("Information has been deleted from the database.")
+        }
+        else {
+          alert("an error has occured");
+        }
+      });
+
+    }
+  </script>
+
+  <style type="text/css">
+    body {
+      font-family: arial, helvetica, sans-serif;
+      font-size: 3em;
+
+    }
+
+    .container {
+
+      background: orange;
+    }
+
+    input[type=text] {
+      width: 10em;
+      height: 1.2em;
+      margin: 4px 0;
+      box-sizing: border-box;
+      border: 2px solid white;
+      border-radius: 5px;
+      background-color: lightpink;
+      color: black;
+    }
+
+    H2 {
+      font: italic bold;
+      font-size: 3em;
+      border-style: groove;
+      border-width: 7px;
+      border-color: RED;
+
+    }
+
+    div {
+      cursor: pointer;
+    }
+
+    .img-fluid {
+      max-width: 80%;
+      height: auto;
+    }
+
+
+    .label-default {
+      width: 10em;
+      display: inline-block;
+    }
+
+    select {
+      width: 10em;
+      margin: 4px 0;
+      box-sizing: border-box;
+      border: 2px solid white;
+      border-radius: 5px;
+      background-color: lightpink;
+      color: black;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-12">
+          <div class="jumbotron text-center">
+
+            <img id="logoimg" src="images/logo1.jpg" class="img-fluid" alt="logo">
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <form action="/addForm" method="Post">
+            <span class="label label-default">ID</span>
+
+            <input type="text" name="ID">
+            <br>
+            <span class="label label-default">ItemType</span>
+
+            <select name="ItemType">
+              <option value=""></option>
+              <option value="hotpoint">Washer</option>
+              <option value="bosch">Dryer</option>
+            </select>
+            <br>
+            <span class="label label-default">Name</span>
+
+            <input type="text" name="Name">
+            <br>
+            <span class="label label-default">Category</span>
+
+            <select name="Category">
+              <option value=""></option>
+              <option value="electric">Electric</option>
+              <option value="gas">Gas</option>
+              <option value="gas">TopLoad</option>
+              <option value="gas">FrontLoad</option>
+
+            </select>
+            <br>
+            <span class="label label-default">Description</span>
+
+            <input type="text" name="Description">
+            <br>
+            <span class="label label-default">Price</span>
+
+            <input type="text" name="Price">
+            <br>
+            <span class="label label-default">Capacity</span>
+
+            <input type="text" name="Capacity">
+            <br>
+            <span class="label label-default">Stackable</span>
+
+            <select name="Stackable">
+              <option value=""></option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+
+
+            </select>
+            <br>
+            <span class="label label-default">Steam Function</span>
+
+            <select name="SteamFunction">
+              <option value=""></option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+
+
+            </select>
+            <br>
+            <span class="label label-default">Width</span>
+
+            <input type="text" name="Width">
+            <br>
+            <span class="label label-default">Depth</span>
+
+            <input type="text" name="Depth">
+            <br>
+            <span class="label label-default">Quantity</span>
+
+            <select name="Quantity">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+
+            <br>
+            <span class="label label-default">Brand</span>
+
+            <select name="Brand">
+              <option value=""></option>
+              <option value="samsung">Samsung</option>
+              <option value="hotpoint">Hotpoint</option>
+              <option value="bosch">Bosch</option>
+              <option value="maytag">Maytag</option>
+              <option value="ge">GE</option>
+              <option value="LG">LG</option>
+              <option value="whirlpool">Whirlpool</option>
+
+            </select>
+            <!-- <br>
+   <span class="label label-default">Rating</span>
+  <select>
+ <option value=""></option>
+ <option value="samsung">1</option>
+  <option value="hotpoint">2</option>
+  <option value="bosch">3</option>
+ <option value="samsung">4</option>
+  <option value="hotpoint">5</option>
+ </select>-->
+
+            <br>
+            <button type="submit" id="add">Add</button>
+            <input type="button" value="Modify" id="modify">
+
+          </form>
+
+
+      </div>
+      <div class="col-md-6">
+        <form>
+          <span class="label label-default">ID</span>
+
+          <input type="text" name="DeleteName" id="DeleteName">
+          <input type="button" value="Delete" id="delete">
+
+        </form>
+        <div id="result">
+          <h3>Welcome!</h3>
+          <ul>
+          </ul>
+        </div>
+</body>
+
+</html>

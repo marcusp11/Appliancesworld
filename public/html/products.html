@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<title>AW</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.1/handlebars.runtime.js"></script>
+		<script src="js/templatesCompiled.js"></script>
+		<script src="js/products.js"></script>
+
+		<style>
+			.container{
+			background-color: orange;
+
+			}
+
+			.mybackground{
+				background-color: lightorange;
+			}
+			.row{
+				margin-top: 5px;
+
+			}
+			.img-fluid {
+				max-width: 80%;
+				height: auto;
+				}
+				body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+
+				}
+		</style>
+	</head>
+	<body>
+		  <!--<header class="topbar"><-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="jumbotron text-center">
+
+					<img id= "logoimg"src="images/logo1.jpg" class="img-fluid" alt="logo">
+
+				</div>
+			</div>
+			</div>
+
+			<div class = "row">
+				<div class="col-md-4">
+					<input type="text" placeholder="Search.." name="search">
+                 <button type="submit" id="search">Submit</button>
+
+				</div>
+				<div class="col-md-4">
+				<div class="btn-group">
+						<button type="button" class="btn btn-primary">
+						  <a class="" href="/">Home</a>
+						</button>
+						<!--div class="dropdown-menu">
+						  <a class="dropdown-item" href="dryers.html">Dryers</a>
+						  <a class="dropdown-item" href="Washers.html">Washers</a>
+						</div-->
+						<div class="btn-group">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							 Dryers
+						</button>
+						<div class="dropdown-menu">
+
+							 <a class="dropdown-item" href="products/Dryer/Electric">Electric Dryers</a>
+					      <a class="dropdown-item" href="products/Dryer/Gas">Gas Dryers</a>
+
+						</div>
+					  <div class="btn-group">
+						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						   Washers
+						</button>
+						<div class="dropdown-menu">
+
+						  <a class="dropdown-item" href="products/Washer/Top">Front Load</a>
+							<a class="dropdown-item" href="products/Washer/Electric">Top Load</a>
+						</div>
+					  </div>
+					</div>
+				</div>
+				</div>
+
+				<div class="col-md-4">
+					<!--empty-->
+				</div>
+			</div>
+			<div class = "row">
+				<div class="col-md-2">
+					<!-- A vertical navbar -->
+					<nav class="navbar bg-light">
+
+					  <!-- Links -->
+					  <ul class="navbar-nav">
+						<li class="nav-item">
+						  <a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="/brand/Samsung">Samsung&reg;</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="/brand/LG">LG&reg;</a>
+						  <li class="nav-item">
+						  <a class="nav-link" href="/brand/GE">GE&reg;</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="/brand/Whirlpool">Whirlpool&reg;</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="/brand/Maytag">Maytag&reg;</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="/brand/Hotpoint">Hotpoint&reg;</a>
+						  <li class="nav-item">
+						  <a class="nav-link" href="/brand/Bosch">Bosch&reg;</a>
+						</li>
+						</li>
+
+					 </ul>
+
+					</nav>
+				</div>
+				<div class="col-md-10 mybackground" >
+					<div class="insideCol" id="templateHere">
+<!--------------------------------------------------------------->
+				 <!-- compiled template data will go here. -->
+
+<!--------------------------------------------------------------->
+					</div>
+				</div>
+			</div>
+
+						<!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="index.html"> Appliance World &reg;</a>
+    </div>
+
+					</div>  <!-- close container -->
+
+	</body>
+
+</html>
